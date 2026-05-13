@@ -1,58 +1,44 @@
-from manager import adicionar, listar
+from api_service import buscar_medicamento
+
 
 def menu():
-    print("\n=== GERENCIADOR DE MEDICAMENTOS ===")
-   print("1 - Cadastrar medicamento")
-print("2 - Listar medicamentos")
-print("3 - Marcar como tomado")
-print("4 - Sair")
+    print("1 - Cadastrar medicamento")
+    print("2 - Listar medicamentos")
+    print("3 - Buscar medicamento na API")
+    print("0 - Sair")
+
 
 def main():
+
     while True:
         menu()
-        op = input("Escolha: ")
 
-        if op == "1":
-            nome = input("Nome: ")
-            horario = input("Horário: ")
-            adicionar(nome, horario)
-            print("Medicamento cadastrado!")
+        opcao = input("Escolha uma opção: ")
 
-       elif op == "2":
-    meds = listar()
-    if not meds:
-        print("Nenhum medicamento cadastrado.")
-    for i, m in enumerate(meds):
-        status = "✔" if m["tomado"] else "✘"
-        print(f"{i} - {m['nome']} ({m['horario']}) [{status}]")
+        if opcao == "1":
+            print("Cadastro em desenvolvimento")
 
-        elif op == "3":
-    meds = listar()
+        elif opcao == "2":
+            print("Listagem em desenvolvimento")
 
-    if not meds:
-        print("Nenhum medicamento cadastrado.")
-        continue
+        elif opcao == "3":
+            nome = input("Digite o nome do medicamento: ")
 
-    for i, m in enumerate(meds):
-        print(f"{i} - {m['nome']}")
+            resultado = buscar_medicamento(nome)
 
-    try:
-        idx = int(input("Escolha o número: "))
-        meds[idx]["tomado"] = True
+            if resultado:
+                print("Medicamento encontrado!")
+                print(resultado)
+            else:
+                print("Medicamento não encontrado.")
 
-        from manager import salvar
-        salvar(meds)
-
-        print("Medicamento marcado como tomado!")
-
-    except:
-        print("Entrada inválida")
-
-elif op == "4":
-    break
+        elif opcao == "0":
+            print("Saindo...")
+            break
 
         else:
             print("Opção inválida")
+
 
 if __name__ == "__main__":
     main()

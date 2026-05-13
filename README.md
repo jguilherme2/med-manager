@@ -1,36 +1,30 @@
-# Gerenciador de Medicamentos
+# Med Manager
 
-##  Problema
-Muitas pessoas, especialmente idosos, têm dificuldade em lembrar horários de medicamentos, o que pode comprometer o tratamento.
+Sistema de gerenciamento de medicamentos desenvolvido em Python.
 
-##  Solução
-Esta aplicação CLI permite cadastrar medicamentos, listar e marcar como tomados, ajudando no controle diário.
+## Funcionalidades
 
-## 👥 Público-alvo
-- Idosos
-- Cuidadores
-- Pessoas em tratamento contínuo
+- Cadastro de medicamentos
+- Listagem de medicamentos
+- Busca de medicamentos usando API pública OpenFDA
+- Testes automatizados
+- CI/CD com GitHub Actions
+- Deploy online com Render
 
-##  Funcionalidades
-- Cadastrar medicamento
-- Listar medicamentos
-- Marcar como tomado
-- Armazenamento em JSON
+## Tecnologias
 
-##  Tecnologias
 - Python
 - Pytest
-- Ruff
+- Requests
+- GitHub Actions
+- Render
 
-## ▶ Como executar
+## API Utilizada
+
+OpenFDA:
+https://open.fda.gov/apis/drug/
+
+## Executar projeto
 
 ```bash
 python src/main.py
-
-python -m pytest
-
-ruff check . ```
-
-## Versão 1.0
-
-## Autor João Guilherme Melo de Abreu  
